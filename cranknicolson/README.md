@@ -23,5 +23,5 @@ Plot with Python (recommended)
 - The included `plot_surface.py` reads `surface_crank.csv` and draws a surface/heatmap using `matplotlib`.
 - Example:
   - `python rawr.py surface_crank.csv`
-  - With S0 = 50, K = 50, r = 0.06, dividends = 0.03, sigma = 0.2, T = 1.0
+  - European Call with S0 = 50, K = 50, r = 0.06, dividends = 0.03, sigma = 0.2, T = 1.0
 ![Example Image](Figure_1.png)
