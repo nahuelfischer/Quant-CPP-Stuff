@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="optionpayoff/optionpayoff.vcxproj" Id="67f2c16f-3f9f-43dc-8d9f-e03e5b9c0a97" />
+</Solution>
