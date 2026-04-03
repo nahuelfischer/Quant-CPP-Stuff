@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="cranknicolson/cranknicolson.vcxproj" Id="9df07414-9dd3-4666-86cc-e7d50c573383" />
+</Solution>
