@@ -64,7 +64,7 @@ public:
 				P[i][0] = 0.0;
 				P[i][2 * M] = S[i][2 * M] - K * std::exp(-r * (N - i) * dt);
 			}
-			else {
+			else if (type == 'P') {
 				P[i][0] = K * std::exp(-r * (N - i) * dt);
 				P[i][2 * M] = 0.0;
 			}
@@ -89,14 +89,6 @@ public:
 			P[i][j_end] = d_star[j_end];
 			for (int j = j_end - 1; j >= j_start; --j) {
 				P[i][j] = d_star[j] - c_star[j] * P[i][j + 1];
-
-				// Early exercise for American options
-				if (type == 'C') {
-					P[i][j] = std::max(P[i][j], S[i][j] - K);
-				}
-				else {
-					P[i][j] = std::max(P[i][j], K - S[i][j]);
-				}
 			}
 		}
 
@@ -118,7 +110,7 @@ int main() {
 
 	for (int steps = 10; steps <= 100; steps += 10) {
 		CrankNicolson cn(steps, steps);
-		double price = cn.solveCrankNicolson(S0, K, r, dividends, sigma, T, steps, steps, 'C');
+		double price = cn.solveCrankNicolson(S0, K, r, dividends, sigma, T, steps, steps, 'C'); // C for European Calls, P for European Puts
 		conv_file << steps << "," << price << "\n";
 	}
 	conv_file.close();
@@ -130,7 +122,7 @@ int main() {
 	std::vector<std::vector<double>> P_grid;
 	std::vector<double> S_grid;
 
-	double price = cn.solveCrankNicolson(S0, K, r, dividends, sigma, T, N, M, 'C', &P_grid, &S_grid);
+	double price = cn.solveCrankNicolson(S0, K, r, dividends, sigma, T, N, M, 'C', &P_grid, &S_grid); // C for European Calls, P for European Puts
 
 	std::ofstream surface_file("surface_crank.csv");
 	surface_file << "TimeStep,AssetPrice,OptionPrice\n";
