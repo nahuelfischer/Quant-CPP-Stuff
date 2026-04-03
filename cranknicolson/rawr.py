@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 # Read the CSV file
-csv_file = 'C:/Users/nahue/Desktop/Mastering Quant with Modern C++/cranknicolson/cranknicolson/surface_crank.csv'
+csv_file = '.../cranknicolson/cranknicolson/surface_crank.csv'
 df = pd.read_csv(csv_file)
 
 # Filter data: TimeStep 0-100, AssetPrice 0-100 (I recommend using a range from {K - 50} to {K + 50}), OptionPrice 0-50 (You may want to adjust this range based on your specific data, but it should be sufficient for most cases)
