@@ -1,6 +1,6 @@
 # Crank–Nicolson Option Pricing (C++)
 
-This project implements a Crank–Nicolson finite-difference solver for European/American option pricing in C++ and writes surface and convergence CSV output. A companion Python script (included) reads the generated CSV and renders a surface/heatmap.
+This project implements a Crank–Nicolson finite-difference solver for European option pricing in C++ and writes surface and convergence output. A companion Python script (included) reads the generated CSV and renders a surface/heatmap.
 
 Files
 - `cranknicolson.cpp` — main implementation. Produces `convergence_crank.txt` and `surface_crank.csv` when run.
@@ -9,7 +9,7 @@ Files
 Quick overview
 - The program computes the option price surface over time and asset-price grid using the Crank–Nicolson method.
 - Output:
-  - `convergence_crank.txt` — simple CSV with step counts and prices for convergence inspection.
+  - `convergence_crank.txt` — simple TXT with step counts and prices for convergence inspection.
   - `surface_crank.csv` — CSV with columns `TimeStep,AssetPrice,OptionPrice` suitable for plotting.
 
 Requirements
@@ -17,7 +17,7 @@ Requirements
 - A modern C++ compiler with C++11 (or newer) support.
 
 Run (C++)
-- Build the `cranknicolson` project in Visual Studio and run the executable. It will write the CSV files to the working directory.
+- Build the `cranknicolson` project in Visual Studio and run the executable. It will write the TXT, CSV files to the working directory.
 
 Plot with Python (recommended)
 - The included `plot_surface.py` reads `surface_crank.csv` and draws a surface/heatmap using `matplotlib`.
