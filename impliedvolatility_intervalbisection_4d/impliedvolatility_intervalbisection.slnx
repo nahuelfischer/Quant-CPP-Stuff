@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="impliedvolatility_intervalbisection/impliedvolatility_intervalbisection.vcxproj" Id="23cdce8a-50f5-4dae-a27b-99ce6f874858" />
+</Solution>
