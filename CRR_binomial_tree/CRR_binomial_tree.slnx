@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CRR_binomial_tree/CRR_binomial_tree.vcxproj" Id="3a3af94d-44a1-4a58-b03c-f71c5095a10a" />
+</Solution>
