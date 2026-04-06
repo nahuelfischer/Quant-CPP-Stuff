@@ -1,4 +1,4 @@
-﻿# Implied Volatility Surface & Visualization (C++ & Python)
+# Implied Volatility Surface & Visualization (C++ & Python)
 
 ## Overview
 
@@ -7,7 +7,7 @@ This project computes and visualizes an **implied volatility surface** for Europ
 It combines:
 
 * **C++** → numerical computation (Black-Scholes + bisection)
-* **Python** → visualization (heatmap scatter, 3D surface and smile)
+* **Python** → visualization (heatmap scatter, 3D surface, and smile)
 
 ---
 
@@ -23,7 +23,9 @@ It combines:
   * Strike price (K)
   * Market price (P)
 * Stores results in a **3D matrix (`std::vector`)**
-* Exports to CSV
+* Exports results to CSV
+
+---
 
 ### Python (Visualization)
 
@@ -40,15 +42,15 @@ It combines:
 
 The generated CSV file:
 
-```id="t3x8pl"
+```
 StockPrice,StrikePrice,MarketPrice,ImpliedVolatility
 ```
 
 Each row represents one point in the 4D space:
 
-[
-(S, K, P) \rightarrow \sigma
-]
+```
+(S, K, P) → σ
+```
 
 ---
 
@@ -58,9 +60,16 @@ Each row represents one point in the 4D space:
 
 The option price is computed using:
 
-[
-C = S \cdot N(d_1) - K e^{-rT} \cdot N(d_2)
-]
+```
+C = S * N(d1) - K * exp(-rT) * N(d2)
+```
+
+where:
+
+```
+d1 = [ln(S / K) + (r + 0.5 * σ^2) * T] / (σ * sqrt(T))
+d2 = d1 - σ * sqrt(T)
+```
 
 ---
 
@@ -68,9 +77,9 @@ C = S \cdot N(d_1) - K e^{-rT} \cdot N(d_2)
 
 Volatility is obtained by solving:
 
-[
-\text{BS}(S,K,\sigma) - P_{market} = 0
-]
+```
+BS(S, K, σ) - MarketPrice = 0
+```
 
 using the **bisection method**.
 
@@ -125,34 +134,16 @@ This preserves the full **4D structure** of the data.
 
 ---
 
-## Example Output
-
-### CSV
-
-```id="2wq9ka"
-X,X,X,X
-X,X,X,X
-...
-```
-
-### Visualizations
-
-* 3D scatter heatmap
-* 3D surface (slice)
-* 2D smile curve
-
----
-
 ## How to Compile (C++)
 
-```bash id="b8d9sx"
+```bash
 g++ -std=c++17 -O2 main.cpp -o implied_vol_surface
 ./implied_vol_surface
 ```
 
 This generates:
 
-```id="7q3mzt"
+```
 implied_vol_surface.csv
 ```
 
@@ -162,13 +153,13 @@ implied_vol_surface.csv
 
 ### Install dependencies
 
-```bash id="l0a3vx"
+```bash
 pip install pandas numpy matplotlib plotly
 ```
 
 ### Run visualization
 
-```bash id="m4r2kn"
+```bash
 python plot_surface.py
 ```
 
@@ -180,13 +171,13 @@ python plot_surface.py
 
   * Surface plots require slicing
   * Scatter plots show full structure
+
 * `NaN` values indicate:
 
   * No valid implied volatility
   * Root-finding failure
-* Bisection is:
+
+* Bisection method:
 
   * ✅ Stable
-  * ❌ Slower than Newton methods
-
-
+  * ❌ Slower than Newton-based methods
