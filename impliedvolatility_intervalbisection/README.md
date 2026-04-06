@@ -1,4 +1,4 @@
-﻿# Implied Volatility Calculator (C++)
+# Implied Volatility Calculator (C++)
 
 ## Overview
 
@@ -59,16 +59,19 @@ The main inputs are:
 
 The European call price is computed using:
 
-[
-C = S \cdot N(d_1) - K e^{-rT} \cdot N(d_2)
-]
+```id="6w1d0z"
+C = S * N(d1) - K * exp(-rT) * N(d2)
+```
 
 where:
 
-* ( d_1 = \frac{\ln(S/K) + (r + \frac{1}{2}\sigma^2)T}{\sigma \sqrt{T}} )
-* ( d_2 = d_1 - \sigma \sqrt{T} )
+```id="z0g1cb"
+d1 = [ln(S / K) + (r + 0.5 * σ^2) * T] / (σ * sqrt(T))
+d2 = d1 - σ * sqrt(T)
+```
 
-The normal CDF is approximated using `std::erf`.
+* `N(x)` = cumulative distribution function of the standard normal distribution
+* The normal CDF is approximated using `std::erf`
 
 ---
 
@@ -76,9 +79,9 @@ The normal CDF is approximated using `std::erf`.
 
 Implied volatility is found by solving:
 
-[
-\text{BlackScholesPrice}(\sigma) - \text{MarketPrice} = 0
-]
+```id="m5r2p1"
+BlackScholesPrice(σ) - MarketPrice = 0
+```
 
 using the **bisection method**.
 
@@ -99,32 +102,13 @@ using the **bisection method**.
 
 ---
 
-## Example Output
-
-### Single Calculation
-
-```id="g7s8kd"
-Implied Volatility: X.XXXX
-```
-
-### Varying Stock Price
-
-```id="p9x2lm"
-Stock Price: 70, Implied Volatility: X.XXXX
-Stock Price: 75, Implied Volatility: X.XXXX
-Stock Price: 80, Implied Volatility: X.XXXX
-...
-```
-
----
-
 ## How to Compile
 
 Requires a C++17 (or newer) compiler.
 
 ### Using g++
 
-```bash id="k2m4vn"
+```bash id="l2q8vm"
 g++ -std=c++17 -O2 main.cpp -o implied_vol
 ./implied_vol
 ```
@@ -133,7 +117,13 @@ g++ -std=c++17 -O2 main.cpp -o implied_vol
 
 ## Notes
 
-* The bisection method is **stable but slower** than methods like Newton-Raphson.
-* The initial interval `[0.01, 1.0]` should bracket the true volatility.
-* If no sign change occurs, the solver will throw an error.
-* Only **European call options** are supported in this implementation.
+* The bisection method is:
+
+  * ✅ Stable
+  * ❌ Slower than methods like Newton-Raphson
+
+* The initial interval `[0.01, 1.0]` should bracket the true volatility
+
+* If no sign change occurs, the solver will throw an error
+
+* Only **European call options** are supported in this implementation
