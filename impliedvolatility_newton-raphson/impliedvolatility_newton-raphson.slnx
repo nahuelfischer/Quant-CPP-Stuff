@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="impliedvolatility_newton-raphson/impliedvolatility_newton-raphson.vcxproj" Id="bedb8ef8-ab2c-42cc-b4b3-512572b15745" />
+</Solution>
