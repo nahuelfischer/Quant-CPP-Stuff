@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="adaptivemeshtrinomialtree/adaptivemeshtrinomialtree.vcxproj" Id="c67b5033-e27b-4816-a9df-8e860cba359d" />
+</Solution>
