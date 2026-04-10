@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="arithmeticasianoptionpricing/arithmeticasianoptionpricing.vcxproj" Id="3edd9633-059a-4b23-9b3c-930415fdb7f0" />
+</Solution>
