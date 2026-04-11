@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="merton_jump-diffusion_process_amereuro/merton_jump-diffusion_process_amereuro.vcxproj" Id="1829870d-4c9c-4121-856d-63d7ea500740" />
+</Solution>
