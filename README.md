@@ -11,3 +11,7 @@ Repository with different C++ implementations for quantitative finance.
 - leisen-reimer-cash-or-nothingoptions: Leisen-Reimer Binomial Model for Cash-or-Nothing Option Pricing
 - merton_jump-diffusion_process: Option Pricing using Merton Jump-Diffusion and Monte Carlo
 - optionpayoff: Simple Option Payoff Framework (extendable for more usecases)
+
+## References
+- Options, Futures, and Other Derivatives (John C. Hull)
+- Mastering Quantitative Finance with Modern C++ (Aaron De la Rosa)
