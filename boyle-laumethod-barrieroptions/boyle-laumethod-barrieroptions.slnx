@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="boyle-laumethod-barrieroptions/boyle-laumethod-barrieroptions.vcxproj" Id="4ce763e9-7194-40a4-acac-d89dd3e42061" />
+</Solution>
