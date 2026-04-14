@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="egarch(1,1)/egarch(1,1).vcxproj" Id="afe35527-cde4-4be9-afbb-c8d333f54ec6" />
+</Solution>
